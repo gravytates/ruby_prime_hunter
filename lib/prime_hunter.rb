@@ -14,3 +14,18 @@ a.each do |n|
   end
 end
 print primes
+
+class Integer
+  def primes
+    a = (2..self).to_a
+    primes = (2..self).to_a
+    a.each do |n|
+      (2...n).each do |m|
+        if n%m == 0
+          primes.delete n
+        end
+      end
+    end
+    return primes
+  end
+end
